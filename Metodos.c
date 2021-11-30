@@ -34,7 +34,8 @@ tPeca escolhePeca(tListaSimplesEncadeada* mesa, tListaSimplesEncadeada* lista, c
     } while(posicaoPeca < 1 || posicaoPeca > tamListaSimples(*lista)); // Enquanto ele escolher um indice inexistente
 
     tNoSimples* peca = lista->inicio;
-    for (int i = 1; i < posicaoPeca; i++) { // contador simples para chegar na peça escolhida
+    int i = 1;
+    for (i = 1; i < posicaoPeca; i++) { // contador simples para chegar na peça escolhida
         peca = peca->prox;
     }
 
@@ -105,7 +106,8 @@ int loopJogo(int j, int numeroJogadores, tListaSimplesEncadeada *Mesa, int ender
     int vencedor = 0;
     while (flag) {
         j = 0; //Contador de pessoas que não possuem pecas pra jogar e não existe mais pecas compraveis
-        for (int i = p ; i < numeroJogadores ; i++) {
+        int i = p;
+        for (i; i < numeroJogadores ; i++) {
             pontas[0] = Mesa->inicio->V.esquerda; // define o array de pontas como cada extremidade da mesa
             pontas[1] = Mesa->final->V.direita;   // define o array de pontas como cada extremidade da mesa
             proximoJogador(&enderecoJogador, numeroJogadores); //Atualiza endereço do proximo jogador
@@ -155,7 +157,8 @@ int loopJogo(int j, int numeroJogadores, tListaSimplesEncadeada *Mesa, int ender
             printf("\n Nao ha mais pecas para compra \n");
 
         //Imprime a mão dos jogadores
-        for (int i = 0 ; i < numeroJogadores ; i++) {
+        int i = 0;
+        for (i; i < numeroJogadores; i++) {
             printf("\n Essas sao as pecas do jogador %s \n ", jogadores[i].nome);
             imprimeListaSimples(jogadores[i].lista);
         }
@@ -164,7 +167,7 @@ int loopJogo(int j, int numeroJogadores, tListaSimplesEncadeada *Mesa, int ender
         clear();
 
         //Verifica se algum jogador já venceu
-        for (int i = 0 ; i < numeroJogadores ; i++) {
+        for (i = 0; i < numeroJogadores; i++) {
             proximoJogador(&enderecoJogador, numeroJogadores);
             if (tamListaSimples(jogadores[enderecoJogador].lista) == 0) {
                 flag = false;
