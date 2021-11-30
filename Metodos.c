@@ -157,8 +157,7 @@ int loopJogo(int j, int numeroJogadores, tListaSimplesEncadeada *Mesa, int ender
             printf("\n Nao ha mais pecas para compra \n");
 
         //Imprime a mão dos jogadores
-        int i = 0;
-        for (i; i < numeroJogadores; i++) {
+        for (i = 0; i < numeroJogadores; i++) {
             printf("\n Essas sao as pecas do jogador %s \n ", jogadores[i].nome);
             imprimeListaSimples(jogadores[i].lista);
         }
