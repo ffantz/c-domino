@@ -48,7 +48,7 @@ int perguntaNumeroJodagores();
 
 //*********************************************************************
 /* Obtem o nome do jogador */
-char *perguntaNomeJogador();
+char *perguntaNomeJogador(int numeroJogador);
 
 //*********************************************************************
 /* Imprime dados de um jogador específico */
