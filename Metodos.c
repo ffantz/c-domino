@@ -337,7 +337,8 @@ char *perguntaNomeJogador(int numeroJogador) {
 
     do{
         printf("\n Jogador %d, qual seu nome?\n", numeroJogador);
-        for(int i=0; i < 100 && (c = getchar()) != '\n' && c != EOF; i++)
+        int i = 0;
+        for(i; i < 100 && (c = getchar()) != '\n' && c != EOF; i++)
         {
             nome        = realloc(nome, (i + 2) * sizeof(char)); // realocando memoria
             nome[i]     = (char) c; // cast de int para char
